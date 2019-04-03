@@ -1,7 +1,7 @@
 package org.lasencinas.Regulator;
 
-public class Regulator {
-/*
+public class Regulator implements Regulable{
+
     public void regulate(Thermometer t, Heater h, double minTemp, double maxTemp, RoomTemperature temperature) {
         RegulatorDisplayCodes code;
         while (t.read(temperature) < maxTemp) {
@@ -29,6 +29,4 @@ public class Regulator {
                 break;
         }
     }
-
-}*/
 }
