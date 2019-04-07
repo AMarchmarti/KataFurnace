@@ -6,29 +6,33 @@ import org.lasencinas.Regulator.Regulable;
 import org.lasencinas.Regulator.Regulator;
 import org.lasencinas.Temperature.Instance;
 import org.lasencinas.Temperature.Temperable;
+import org.lasencinas.Temperature.Thermometer;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    final double minTemp = 15.0;
-    final double maxTemp = 21.0;
+public class  App {
+    public static void main(String[] args) {
 
-    Instance temperature = new Instance(15);
-    Heatable heater = new Heater();
-    Temperable thermometer = new RemoteCommandSensor();
 
-    Regulable regulator = new Regulator();
+        final double minTemp = 15.0;
+        final double maxTemp = 21.0;
 
-        System.out.println( "Arrancando..." );
+        Instance temperature = Instance.getInstance(15.0);
+        Heatable heater = new Heater();
+        Temperable thermometer = new Thermometer();
+
+        Regulable regulator = new Regulator();
+
+        System.out.println("Arrancando..." );
         regulator.regulate(thermometer, heater, minTemp, maxTemp, temperature);
 /*
     Jedi yoda = new Jedi();
         System.out.println( "\nArrancando a Yoda: " );
         regulator.regulate(thermometer, yoda, minTemp, maxTemp, temperature);
         yoda.speak();*/
+    }
 }
 
 
