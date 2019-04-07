@@ -1,8 +1,12 @@
 package org.lasencinas.Regulator;
 
+import org.lasencinas.Heater.Heater;
+import org.lasencinas.Temperature.Instance;
+import org.lasencinas.Temperature.Temperable;
+
 public class Regulator implements Regulable{
 
-    public void regulate(Thermometer t, Heater h, double minTemp, double maxTemp, RoomTemperature temperature) {
+    public void regulate(Temperable t, Heater h, double minTemp, double maxTemp, Instance temperature) {
         RegulatorDisplayCodes code;
         while (t.read(temperature) < maxTemp) {
             code = RegulatorDisplayCodes.HEATING;
@@ -16,7 +20,7 @@ public class Regulator implements Regulable{
         }
     }
 
-    private void message(RegulatorDisplayCodes code, RoomTemperature temperature) {
+    private void message(RegulatorDisplayCodes code, Instance temperature) {
         switch (code) {
             case HEATING:
                 System.out.println("Calentando => temperatura " + temperature.getTemperature());

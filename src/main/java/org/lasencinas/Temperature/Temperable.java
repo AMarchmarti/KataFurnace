@@ -2,5 +2,5 @@ package org.lasencinas.Temperature;
 
 public interface Temperable {
 
-    void read(RoomTemperature);
+    double read(Instance instance);
 }

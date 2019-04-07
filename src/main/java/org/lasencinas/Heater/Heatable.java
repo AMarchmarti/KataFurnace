@@ -1,6 +1,8 @@
 package org.lasencinas.Heater;
 
+import org.lasencinas.Temperature.Instance;
+
 public interface Heatable {
-    void engage(RoomTemperature temperature);
-    void disengage(RoomTemperature temperature);
+    void engage(Instance temperature);
+    void disengage(Instance temperature);
 }
